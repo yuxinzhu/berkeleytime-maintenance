@@ -1,0 +1,142 @@
+@me-blue: #1896d5;
+@radius: 100px;
+#circle {
+    // initially not shown
+    display: none;
+
+    margin: 0 auto;
+    width: 2 * @radius;
+    height: 2 * @radius;
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    background-size: cover;
+    background-position: center 70%;
+    background-image: url("campanile.jpg");
+}
+
+body {
+    //always 100% so we can display bg images
+    width: 100%;
+    height: 100%;
+
+    background: url(berkeley.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .menu {
+        margin: 3px 0 12px 0px;
+        width: 100%; text-align: center;
+        li {
+            padding: 0px 30px 0px 30px;
+            font-size: 14px;
+            display: inline-block;
+            a {
+                text-decoration: none;
+                color: @me-blue;
+                cursor: pointer;
+                &:hover {
+                    color: darken(@me-blue, 10%);
+                }
+            }
+        }
+    }
+
+    #container {
+        position: absolute;
+        display: block;
+        top: 10%;
+        left: 10%;
+
+        width: 80%;
+        height: 80%;
+
+        min-width: 220px;
+        min-height: 500px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+
+        #title {
+            text-align: center;
+            font-size: 45px;
+            font-weight: 100;
+            line-height: 40px;
+            height:40px;
+            margin-top: 30px;
+        }
+        #about_me {
+            p {
+                max-width: 450px;
+                margin: 0 auto;
+                margin-top: 30px;
+                text-align: justify;
+                font-size: 14px;
+                line-height: 21px;
+                font-weight: 100;
+            }
+        }
+        #social {
+            margin-top: 20px;
+            width: 100%; text-align: center;
+            li {
+                padding: 10px;
+                display: inline-block;
+            }
+
+            @transition-speed: 0.3s;
+            @icon-size: 50px;
+            .icons {
+                -webkit-backface-visibility: hidden;
+                margin: 0 auto;
+                width: @icon-size;
+                height: @icon-size;
+                border-radius: @icon-size/2;
+                -webkit-border-radius: @icon-size/2;
+                -moz-border-radius: @icon-size/2;
+                background-size: @icon-size;
+                background-repeat: no-repeat;
+
+                -webkit-transition: all ease @transition-speed;
+                -moz-transition: all ease @transition-speed;
+                -o-transition: all ease @transition-speed;
+                -ms-transition: all ease @transition-speed;
+                transition: all ease @transition-speed;
+            }
+
+            @rotation: 360deg;
+            .icons:hover {
+                -webkit-backface-visibility: hidden;
+                cursor: pointer;
+                background-size: @icon-size;
+                -webkit-transform:rotate(@rotation);
+                -moz-transform:rotate(@rotation);
+                -o-transform:rotate(@rotation);
+                -ms-transform:rotate(@rotation);
+                transform:rotate(@rotation);
+            }
+
+            .twitter {
+                background-image: url(noborder/twitter.png);
+            }
+            .email {
+                background-image: url(noborder/email.png);
+            }
+            .google {
+                background-image: url(noborder/googleplus-revised.png);
+            }
+            .github {
+                background-image: url(noborder/github.png);
+            }
+            .facebook {
+                background-image: url(noborder/facebook500.png);
+            }
+            .linkedin {
+                background-image: url(noborder/linkedin.png);
+            }
+        }
+    }
+}
+
+
